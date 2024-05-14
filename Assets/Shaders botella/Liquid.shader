@@ -1,4 +1,4 @@
-Shader"Jetely/Liquid"
+Shader "Jettelly/Liquid"
 {
     Properties
     {
@@ -12,11 +12,9 @@ Shader"Jetely/Liquid"
     SubShader
     {
         Tags { "RenderType"="Opaque" "DisableBatching" = "True"}
-ZWrite On
-
-AlphaToMask On
-
-LOD100
+        ZWrite On
+        AlphaToMask On
+        LOD 100
 
         Pass
         {
@@ -24,52 +22,51 @@ LOD100
             #pragma vertex vert
             #pragma fragment frag
 
-#include "UnityCG.cginc"
+            #include "UnityCG.cginc"
 
-struct appdata
-{
-    float4 vertex : POSITION;
-    float2 uv : TEXCOORD0;
-};
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
 
-struct v2f
-{
-    float2 uv : TEXCOORD0;
-    float4 vertex : SV_POSITION;
-    float liquidEdge : TEXCOORD1;
-};
+            struct v2f
+            {
+                float2 uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+                float liquidEdge : TEXCOORD1; 
+            };
 
-float4 _TopColor;
-float4 _MidColor;
-float4 _BaseColor;
-float _LiquidAmount;
-float _MidAmount;
+            float4 _TopColor;
+            float4 _MidColor;
+            float4 _BaseColor;
+            float _LiquidAmount;
+            float _MidAmount;
 
-v2f vert(appdata v)
-{
-    v2f o;
-    o.vertex = UnityObjectToClipPos(v.vertex);
-    o.uv = v.uv;
-    float3 worldPosition = mul(unity_ObjectToWorld, v.vertex.xyz);
-    o.liquidEdge = worldPosition.y + _LiquidAmount;
-    return o;
-}
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv =v.uv;
+                float3 worldPosition = mul(unity_ObjectToWorld, v.vertex.xyz);
+                o.liquidEdge = worldPosition.y + _LiquidAmount;
+                return o;
+            }
 
-fixed4 frag(v2f i, fixed facing : VFACE) : SV_Target
-{
-    fixed4 midEdge = step(i.liquidEdge, 0.5) - smoothstep(i.liquidEdge, 0.5, (0.5 - _MidAmount));
-    fixed4 midEdgeColor = midEdge * _MidColor;
+            fixed4 frag (v2f i, fixed facing : VFACE) : SV_Target
+            {
+                fixed4 midEdge = step(i.liquidEdge, 0.5) - smoothstep(i.liquidEdge, 0.5,(0.5 - _MidAmount));
+                fixed4 midEdgeColor = midEdge * _MidColor;
 
-    fixed4 base = step(i.liquidEdge, 0.5) - midEdge;
-    fixed4 baseColor = base * _BaseColor;
+                fixed4 base = step(i.liquidEdge, 0.5) - midEdge;
+                fixed4 baseColor = base * _BaseColor;
 
-    fixed4 renderBase = baseColor + midEdgeColor;
-    fixed4 renderTop = _TopColor * (midEdge + base);
+                fixed4 renderBase = baseColor + midEdgeColor;
+                fixed4 renderTop = _TopColor * (midEdge + base);
 
-    return facing > 0 ? renderBase : renderTop;
-}
+                return facing > 0 ? renderBase : renderTop;
+            }
             ENDCG
         }
     }
 }
-
