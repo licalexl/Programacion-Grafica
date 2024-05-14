@@ -636,9 +636,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 8a9fe0a2889ea1147ab985280ac1700a, type: 2}
   translationDistance: 0
-  rotationXAngle: 0
-  rotationYAngle: 0
-  rotationZAngle: 0
+  rotationXAngle: 1
+  rotationYAngle: 5
+  rotationZAngle: 3
 --- !u!23 &960412376
 MeshRenderer:
   m_ObjectHideFlags: 0
