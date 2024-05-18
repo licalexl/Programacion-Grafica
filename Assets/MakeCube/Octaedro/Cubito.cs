@@ -13,7 +13,7 @@ public class Cubito : MonoBehaviour
 
 
                            //Cube
-                           new Vector3 (0, 0, 0), //0
+                           new Vector3(0, 0, 0), //0
                            new Vector3(0, 1, 0), //1
                            new Vector3(1, 1, 0), //2
                            new Vector3(1, 0, 0), //3
