@@ -7,6 +7,25 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class Icosaedro : MonoBehaviour
 {
+    
+
+    [SerializeField]
+    private Vector3 rotationSpeed = new Vector3(0, 45, 0); // Velocidad de rotación en grados por segundo
+
+    [SerializeField]
+    private Vector3 rotationSpeed1 = new Vector3(0, 45, 0); // Velocidad de rotación en grados por segundo
+
+    [SerializeField]
+    private Vector3 rotationSpeed2 = new Vector3(0, 45, 0); // Velocidad de rotación en grados por segundo
+
+    public float speedx;
+    public float speedy;
+    public float speedz;
+
+
+
+
+
     public float a = 0.364f;
     public float b = 0.315f;
 
@@ -77,15 +96,21 @@ public class Icosaedro : MonoBehaviour
 
         // Comienza la corutina para actualizar la malla periódicamente
         StartCoroutine(Actualizarcubo());
+
+        rotate();
+
     }
+    
 
     IEnumerator Actualizarcubo()
     {
         while (true) // Bucle infinito
         {
+            
             InitializeUVs();
             Icosaedro_(vertices);
             UpdateMesh();
+            rotate();
             yield return null;
         }
     }
@@ -109,6 +134,7 @@ public class Icosaedro : MonoBehaviour
         mesh.vertices = vertices;
         mesh.RecalculateNormals();
         Icosaedro_(vertices);
+
     }
 
     // Método para inicializar las coordenadas UV
@@ -120,7 +146,7 @@ public class Icosaedro : MonoBehaviour
             new Vector2(0f, 0.315f),
             new Vector2(0.182f, 0.315f),
             new Vector2(0.273f, 0.472f),
-            new Vector2(0.364f, 0.315f), // Aquí reemplaza a y b por los valores deseados
+            new Vector2(a, b), // Aquí reemplaza a y b por los valores deseados
             new Vector2(0.455f, 0.472f),
             new Vector2(0.545f, 0.315f),
             new Vector2(0.636f, 0.472f),
@@ -140,5 +166,16 @@ public class Icosaedro : MonoBehaviour
             new Vector2(0.091f, 0.157f),
         };
     }
+
+    public void rotate()
+    {
+
+        transform.Rotate(rotationSpeed * speedx);
+        transform.Rotate(rotationSpeed1 * speedy);
+        transform.Rotate(rotationSpeed2 * speedz);
+
+    }
+
 }
+
 

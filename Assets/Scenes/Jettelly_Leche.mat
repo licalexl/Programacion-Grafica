@@ -25,10 +25,10 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _LiquidAmount: -0.13
-    - _MidAmount: 0.0673
+    - _LiquidAmount: -0.38
+    - _MidAmount: 0.2
     m_Colors:
-    - _BaseColor: {r: 0.13333334, g: 0.19215688, b: 0.17254902, a: 1}
-    - _MidColor: {r: 0.31764707, g: 0.7137255, b: 0.5803922, a: 1}
-    - _TopColor: {r: 0.13333334, g: 0.19215688, b: 0.17254902, a: 1}
+    - _BaseColor: {r: 0.8018868, g: 0.727919, b: 0.1487777, a: 1}
+    - _MidColor: {r: 0.7169812, g: 0.15331665, b: 0.56792784, a: 1}
+    - _TopColor: {r: 1, g: 0, b: 0.17462349, a: 1}
   m_BuildTextureStacks: []
