@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Jettelly_Leche 1
+  m_Name: lechitaLiquido
   m_Shader: {fileID: 4800000, guid: 8672c99d9b5ebdf438800ef26ba6cb1d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

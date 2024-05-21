@@ -61,21 +61,21 @@ Material:
     - _Cull: 2
     - _DstBlend: 10
     - _Fill: 0.8
-    - _FresnelPower: 1
+    - _FresnelPower: 0.9
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _WobbleX: 0.1
-    - _WobbleY: 0.1
+    - _WobbleX: -0.14
+    - _WobbleY: 0
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _FresnelColor: {r: 0.49567512, g: 0.5754717, b: 0.30764207, a: 1}
-    - _LiquidColor: {r: 0.254717, g: 0.069682516, b: 0.054467756, a: 0}
+    - _FresnelColor: {r: 0.9150943, g: 0, b: 0, a: 1}
+    - _LiquidColor: {r: 1, g: 0, b: 0, a: 0}
     - _MidColor: {r: 0, g: 0, b: 0, a: 0}
     - _SideColor: {r: 1, g: 0, b: 0, a: 1}
-    - _SurfaceColor: {r: 0.6132076, g: 0.5738233, b: 0.25839558, a: 0}
+    - _SurfaceColor: {r: 1, g: 0, b: 0, a: 1}
     - _TopColor: {r: 3.9296649, g: 2.910097, b: 0, a: 1}
   m_BuildTextureStacks: []
