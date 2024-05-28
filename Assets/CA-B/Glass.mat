@@ -42,7 +42,7 @@ Material:
     - _Smoothness: 96.85
     - _Specular: 95
     m_Colors:
-    - _SpecularColor: {r: 1, g: 0.20743547, b: 0, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1218925466448692294
 MonoBehaviour:

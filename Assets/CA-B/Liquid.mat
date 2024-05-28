@@ -72,10 +72,10 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _FresnelColor: {r: 0.9150943, g: 0, b: 0, a: 1}
-    - _LiquidColor: {r: 1, g: 0, b: 0, a: 0}
+    - _FresnelColor: {r: 0, g: 0.8490566, b: 0.73255926, a: 1}
+    - _LiquidColor: {r: 0, g: 0, b: 0, a: 0}
     - _MidColor: {r: 0, g: 0, b: 0, a: 0}
     - _SideColor: {r: 1, g: 0, b: 0, a: 1}
-    - _SurfaceColor: {r: 1, g: 0, b: 0, a: 1}
+    - _SurfaceColor: {r: 1, g: 0.68602705, b: 0, a: 1}
     - _TopColor: {r: 3.9296649, g: 2.910097, b: 0, a: 1}
   m_BuildTextureStacks: []
